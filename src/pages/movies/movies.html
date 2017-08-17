@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Movies</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -15,7 +15,11 @@
     <input [(ngModel)]="hero.name" placeholder="name">
   </div>
 
-  <li *ngFor="let hero of heroes">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  <li *ngFor="let movie of movies">
+    <span class="badge">{{movie.id}}</span> - {{movie.title}}
   </li>
+
+  <!-- <li *ngFor="let hero of heroes">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li> -->
 </ion-content>
