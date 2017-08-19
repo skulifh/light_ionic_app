@@ -4,22 +4,22 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h1>{{title}}</h1>
-  <h2>{{hero.name}} details!</h2>
-  <div><label>id: </label>{{hero.id}}</div>
-  <div><label>name: </label>{{hero.name}}</div>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      
 
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="hero.name" placeholder="name">
-  </div>
+      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let movie of movies">
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="https://image.tmdb.org/t/p/w300_and_h300_bestv2/{{movie.poster_path}}">
+          </ion-thumbnail>
+          <h2>{{movie.title}}</h2>
+          <p>{{movie.release_date.split("-")[0]}} • {{movie.vote_average}} <ion-icon name="star"></ion-icon></p>
+          <button ion-button clear item-end>View</button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <li *ngFor="let movie of movies">
-    <span class="badge">{{movie.id}}</span> - {{movie.title}}
-  </li>
-
-  <!-- <li *ngFor="let hero of heroes">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
-  </li> -->
 </ion-content>
