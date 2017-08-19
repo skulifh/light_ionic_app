@@ -7,6 +7,7 @@ import { HttpModule }    from '@angular/http';
 import { TvshowsPage } from '../pages/tvshows/tvshows';
 import { MoviesPage } from '../pages/movies/movies';
 import { TabsPage } from '../pages/tabs/tabs';
+import { MovieDetailsPage } from '../pages/movie-details/movie-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,6 +17,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     TvshowsPage,
     MoviesPage,
+    MovieDetailsPage,
     TabsPage
   ],
   imports: [
@@ -28,6 +30,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     TvshowsPage,
     MoviesPage,
+    MovieDetailsPage,
     TabsPage
   ],
   providers: [

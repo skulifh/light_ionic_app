@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
 import { MovieService } from '../../services/movie.service';
+import { MovieDetailsPage } from '../movie-details/movie-details';
 
 @Component({
   selector: 'page-movies',
@@ -35,6 +36,12 @@ export class MoviesPage implements OnInit {
 
 		//Simulate the same thing above with slow connection
 		// this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
+	}
+
+	movieTapped(event, movie) {
+		this.navCtrl.push(MovieDetailsPage, {
+			movie: movie
+		});
 	}
 
   constructor(public navCtrl: NavController, private movieService: MovieService) {

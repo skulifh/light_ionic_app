@@ -17,7 +17,7 @@
           </ion-thumbnail>
           <h2>{{movie.title}}</h2>
           <p>{{movie.release_date.split("-")[0]}} • {{movie.vote_average}} <ion-icon name="star"></ion-icon></p>
-          <button ion-button clear item-end>View</button>
+          <button ion-button clear item-end (click)="movieTapped($event, movie)">View</button>
         </ion-item>
       </ion-col>
     </ion-row>
