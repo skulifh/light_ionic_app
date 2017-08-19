@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Tvshows</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="searchTvshows($event)"></ion-searchbar>
+  <ion-grid>
+    <ion-row>
+      
+
+      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let tvshow of tvshows | slice:0:10">
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="https://image.tmdb.org/t/p/w300_and_h300_bestv2/{{tvshow.poster_path}}">
+          </ion-thumbnail>
+          <h2>{{tvshow.name}}</h2>
+          <p>{{tvshow.first_air_date.split("-")[0]}} • {{tvshow.vote_average}} <ion-icon name="star"></ion-icon></p>
+          <button ion-button clear item-end>View</button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

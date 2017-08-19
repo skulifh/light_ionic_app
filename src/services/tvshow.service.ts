@@ -1,30 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { Tvshow } from '../models/tvshow';
 import 'rxjs/add/operator/toPromise';
 
-
-import { Movie } from '../models/movie';
-
 @Injectable()
-export class MovieService {
+export class TvshowService {
 	constructor(private http: Http) {}
 
-	getMovies(): Promise<Movie[]> {
-		const url = "https://api.themoviedb.org/3/movie/top_rated";
+	getTvshows(): Promise<Tvshow[]> {
+		const url = "https://api.themoviedb.org/3/tv/top_rated";
 	    return this.http.get(url, {
-	        params: { api_key: "97c9873a035726c716e8254e0a0e8ed1", language: "en-US", page: 1 }
+	        params: { api_key: "97c9873a035726c716e8254e0a0e8ed1" }
 	      })
 		    .toPromise()
-		    .then(response => response.json()["results"] as Movie[])
+		    .then(response => response.json()["results"] as Tvshow[])
 	  }
 
-  	searchMovies(val): Promise<Movie[]> {
-		const url = "https://api.themoviedb.org/3/search/movie";
+  	searchTvshows(val): Promise<Tvshow[]> {
+		const url = "https://api.themoviedb.org/3/search/tv";
 	    return this.http.get(url, {
 	        params: { api_key: "97c9873a035726c716e8254e0a0e8ed1", language: "en-US", page: 1, include_adult: false, query: val }
 	      })
 		    .toPromise()
-		    .then(response => response.json()["results"] as Movie[])
+		    .then(response => response.json()["results"] as Tvshow[])
 	  }
 // 	getHeroesSlowly(): Promise<Hero[]> {
 // 	return new Promise(resolve => {

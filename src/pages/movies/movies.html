@@ -10,7 +10,7 @@
     <ion-row>
       
 
-      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let movie of movies">
+      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let movie of movies | slice:0:10">
         <ion-item>
           <ion-thumbnail item-start>
             <img src="https://image.tmdb.org/t/p/w300_and_h300_bestv2/{{movie.poster_path}}">

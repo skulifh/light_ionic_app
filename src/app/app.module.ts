@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule }    from '@angular/http';
 
-import { ContactPage } from '../pages/contact/contact';
+import { TvshowsPage } from '../pages/tvshows/tvshows';
 import { MoviesPage } from '../pages/movies/movies';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -14,7 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    ContactPage,
+    TvshowsPage,
     MoviesPage,
     TabsPage
   ],
@@ -26,7 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ContactPage,
+    TvshowsPage,
     MoviesPage,
     TabsPage
   ],
