@@ -24,6 +24,7 @@ export class MoviesPage implements OnInit {
 	getMovies(): void {
 		this.movieService.getMovies().then(movies => this.movies = movies);
 	}
+	
 	searchMovies(ev: any): void {
 		let val = ev.target.value;
 		// if the value is an empty string don't filter the items
