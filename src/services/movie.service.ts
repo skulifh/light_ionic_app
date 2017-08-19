@@ -10,8 +10,19 @@ export class MovieService {
 	constructor(private http: Http) {}
 
 	getMovies(): Promise<Movie[]> {
-		const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=97c9873a035726c716e8254e0a0e8ed1`;
-	    return this.http.get(url)
+		const url = "https://api.themoviedb.org/3/movie/top_rated";
+	    return this.http.get(url, {
+	        params: { api_key: "97c9873a035726c716e8254e0a0e8ed1" }
+	      })
+		    .toPromise()
+		    .then(response => response.json()["results"] as Movie[])
+	  }
+
+  	searchMovies(val): Promise<Movie[]> {
+		const url = "https://api.themoviedb.org/3/search/movie";
+	    return this.http.get(url, {
+	        params: { api_key: "97c9873a035726c716e8254e0a0e8ed1", language: "en-US", page: 1, include_adult: false, query: val }
+	      })
 		    .toPromise()
 		    .then(response => response.json()["results"] as Movie[])
 	  }

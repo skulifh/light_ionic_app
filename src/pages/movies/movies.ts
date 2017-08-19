@@ -16,6 +16,8 @@ export class MoviesPage implements OnInit {
 	ngOnInit(): void {
   		this.getHeroes();
   		this.getMovies();
+
+  		this.default_movies = this.movies;
   	}
 
 	title = 'Tour of Heroes';
@@ -26,6 +28,9 @@ export class MoviesPage implements OnInit {
 	};
 	heroes: Hero[];
 	movies: Movie[];
+
+	//todo: use this instead of always call getHeroes()
+	default_movies: Movie[];
 
 	getHeroes(): void {
 		this.heroService.getHeroes().then(heroes => this.heroes = heroes);
@@ -39,6 +44,22 @@ export class MoviesPage implements OnInit {
 		//Simulate the same thing above with slow connection
 		// this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
 	}
+	searchMovies(ev: any): void {
+		let val = ev.target.value;
+		// if the value is an empty string don't filter the items
+	    if (val && val.trim() != '' && val.length > 3) {
+			this.movieService.searchMovies(val).then(movies => this.movies = movies);
+	    }
+	    else {
+	    	this.movieService.getMovies().then(movies => this.movies = movies);
+	    }
+
+		//this.movieService.searchMovies().then(movies => this.movies = movies);
+
+		//Simulate the same thing above with slow connection
+		// this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
+	}
+
   constructor(public navCtrl: NavController, private heroService: HeroService, private movieService: MovieService) {
   	//this.heroes = this.heroService.getHeroes();
   }
