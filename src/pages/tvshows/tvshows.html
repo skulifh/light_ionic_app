@@ -17,7 +17,7 @@
           </ion-thumbnail>
           <h2>{{tvshow.name}}</h2>
           <p>{{tvshow.first_air_date.split("-")[0]}} • {{tvshow.vote_average}} <ion-icon name="star"></ion-icon></p>
-          <button ion-button clear item-end>View</button>
+          <button ion-button clear item-end (click)="tvshowTapped($event, tvshow)">View</button>
         </ion-item>
       </ion-col>
     </ion-row>

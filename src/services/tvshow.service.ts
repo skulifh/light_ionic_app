@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { Tvshow } from '../models/tvshow';
+import { Video } from '../models/video';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -23,6 +24,21 @@ export class TvshowService {
 	      })
 		    .toPromise()
 		    .then(response => response.json()["results"] as Tvshow[])
+	  }
+
+  	getVideos(val): Promise<Video[]> {
+		const url = "https://api.themoviedb.org/3/tv/" + val + "/videos";
+		// this.http.get(url, {
+	 //        params: { api_key: "97c9873a035726c716e8254e0a0e8ed1", language: "en-US" }
+	 //      })
+		//     .toPromise()
+		//     .then(response => alert(JSON.stringify(response.json()["results"][0])));
+
+	    return this.http.get(url, {
+	        params: { api_key: "97c9873a035726c716e8254e0a0e8ed1", language: "en-US" }
+	      })
+		    .toPromise()
+		    .then(response => response.json()["results"] as Video[])
 	  }
 // 	getHeroesSlowly(): Promise<Hero[]> {
 // 	return new Promise(resolve => {

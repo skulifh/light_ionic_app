@@ -8,6 +8,7 @@ import { TvshowsPage } from '../pages/tvshows/tvshows';
 import { MoviesPage } from '../pages/movies/movies';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MovieDetailsPage } from '../pages/movie-details/movie-details';
+import { TvshowDetailsPage } from '../pages/tvshow-details/tvshow-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,6 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TvshowsPage,
     MoviesPage,
     MovieDetailsPage,
+    TvshowDetailsPage,
     TabsPage
   ],
   imports: [
@@ -31,6 +33,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TvshowsPage,
     MoviesPage,
     MovieDetailsPage,
+    TvshowDetailsPage,
     TabsPage
   ],
   providers: [

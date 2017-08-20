@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { OnInit } from '@angular/core';
 import { Tvshow } from '../../models/tvshow';
 import { TvshowService } from '../../services/tvshow.service';
+import { TvshowDetailsPage } from '../tvshow-details/tvshow-details';
 
 @Component({
   selector: 'page-tvshows',
@@ -35,6 +36,12 @@ export class TvshowsPage implements OnInit {
 
 		//Simulate the same thing above with slow connection
 		// this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
+	}
+
+	tvshowTapped(event, tvshow) {
+		this.navCtrl.push(TvshowDetailsPage, {
+			tvshow: tvshow
+		});
 	}
 
   constructor(public navCtrl: NavController, private tvshowService: TvshowService) {
