@@ -12,7 +12,10 @@
     
 
     <ion-card-content>
-      <iframe width="560" height="315" [attr.src]="url" frameborder="0" allowfullscreen></iframe>
+      <div *ngIf="url">
+        <iframe width="560" height="315" [attr.src]="url" frameborder="0" allowfullscreen></iframe>
+      </div>
+
       <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{selectedMovie.poster_path}}" alt="...">
       <ion-card-title>
         {{selectedMovie.title}}
