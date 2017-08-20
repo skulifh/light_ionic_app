@@ -26,7 +26,7 @@ export class MovieService {
 		    .then(response => response.json()["results"] as Movie[])
 	  }
 
-  	getVideos(val): Promise<Video> {
+  	getVideos(val): Promise<Video[]> {
 		const url = "https://api.themoviedb.org/3/movie/" + val + "/videos";
 		// this.http.get(url, {
 	 //        params: { api_key: "97c9873a035726c716e8254e0a0e8ed1", language: "en-US" }
@@ -38,7 +38,7 @@ export class MovieService {
 	        params: { api_key: "97c9873a035726c716e8254e0a0e8ed1", language: "en-US" }
 	      })
 		    .toPromise()
-		    .then(response => response.json()["results"][0] as Video)
+		    .then(response => response.json()["results"] as Video[])
 	  }
 // 	getHeroesSlowly(): Promise<Hero[]> {
 // 	return new Promise(resolve => {

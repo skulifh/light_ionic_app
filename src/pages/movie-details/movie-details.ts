@@ -19,9 +19,15 @@ export class MovieDetailsPage {
   		// this.url = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.video.key + "?rel=0&amp;controls=0&amp;showinfo=0")
   	}
 
-  buildUrl(video): SafeResourceUrl {
-    if (video) {
-      return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + video.key + "?rel=0&amp;controls=0&amp;showinfo=0")
+  buildUrl(videos): SafeResourceUrl {
+    if (videos) {
+      for (let video of videos) {
+        if (video.site == "YouTube") {
+          return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + video.key + "?rel=0&amp;controls=0&amp;showinfo=0")
+        }
+        return null
+      }
+      
     } 
     else {
       return null
@@ -29,7 +35,7 @@ export class MovieDetailsPage {
   }
 
 	getMovieVideos(): void {
-		this.movieService.getVideos(this.selectedMovie.id).then(video => this.url = this.buildUrl(video));
+		this.movieService.getVideos(this.selectedMovie.id).then(videos => this.url = this.buildUrl(videos));
 
 	}
 
