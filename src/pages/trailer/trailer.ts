@@ -1,5 +1,4 @@
-import { Component, Directive } from '@angular/core';
-import { Injector } from '@angular/core';
+import { Component, EventEmitter, Input } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { MovieDetailsPage } from "../movie-details/movie-details";
 
@@ -7,16 +6,16 @@ import { MovieDetailsPage } from "../movie-details/movie-details";
   selector: 'page-trailer',
   templateUrl: 'trailer.html'
 })
+
 export class TrailerPage implements OnInit {
 	ngOnInit(): void {
-
+		this.name = this.parnt;
   	}
-  	name = "Child!";
-  	parentComponent: any;
+  	name : any;
+  	@Input() parnt;
 
-  constructor(private inj:Injector) {
-  	let parentComponent = this.inj.get(MovieDetailsPage);
-  	this.parentComponent = parentComponent;
-  }
+	constructor() {
+		// this.name = this.parnt;
+	}
 
 }

@@ -12,7 +12,7 @@
     
 
     <ion-card-content>
-      <page-trailer></page-trailer>
+      <page-trailer [parnt]="'var2'"></page-trailer>
       
       <iframe *ngIf="url" width="560" height="315" [attr.src]="url" frameborder="0" allowfullscreen></iframe>
       <img *ngIf="!url" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{selectedMovie.poster_path}}" alt="...">
