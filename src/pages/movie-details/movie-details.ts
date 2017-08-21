@@ -3,11 +3,12 @@ import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser'
 
 import { NavController, NavParams } from 'ionic-angular';
 import { MovieService } from '../../services/movie.service';
+import { TrailerPage } from '../trailer/trailer'
 
 @Component({
   selector: 'page-movie-details',
   templateUrl: 'movie-details.html',
-  providers: [MovieService]
+  providers: [MovieService, TrailerPage]
 })
 export class MovieDetailsPage {
 	selectedMovie: any;
