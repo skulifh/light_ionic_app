@@ -9,13 +9,12 @@ import { MovieDetailsPage } from "../movie-details/movie-details";
 
 export class TrailerPage implements OnInit {
 	ngOnInit(): void {
-		this.name = this.parnt;
   	}
-  	name : any;
-  	@Input() parnt;
+
+  	@Input() youtube_url;
+  	@Input() poster_path;
 
 	constructor() {
-		// this.name = this.parnt;
 	}
 
 }
