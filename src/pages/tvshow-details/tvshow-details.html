@@ -10,11 +10,8 @@
 <ion-content>
   <ion-card>
     
-
     <ion-card-content>
-      <iframe *ngIf="url" width="560" height="315" [attr.src]="url" frameborder="0" allowfullscreen></iframe>
-      
-      <img *ngIf="!url" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{selectedTvshow.poster_path}}" alt="...">
+      <page-trailer [youtube_url]="url" [poster_path] = "selectedTvshow.poster_path"></page-trailer>
       
       <ion-card-title>
         {{selectedTvshow.title}}
@@ -23,18 +20,6 @@
         {{selectedTvshow.overview}}
       </p>
     </ion-card-content>
-
-    <!-- <ion-item>
-      <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
-      Albums
-      <ion-badge item-end>9</ion-badge>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name='logo-twitter' item-start style="color: #55acee"></ion-icon>
-      Followers
-      <ion-badge item-end>260k</ion-badge>
-    </ion-item> -->
 
   </ion-card>
 </ion-content>
