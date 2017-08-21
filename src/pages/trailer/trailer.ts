@@ -11,10 +11,12 @@ export class TrailerPage implements OnInit {
 	ngOnInit(): void {
 
   	}
-  	name = "Child!"
+  	name = "Child!";
+  	parentComponent: any;
 
   constructor(private inj:Injector) {
   	let parentComponent = this.inj.get(MovieDetailsPage);
+  	this.parentComponent = parentComponent;
   }
 
 }
