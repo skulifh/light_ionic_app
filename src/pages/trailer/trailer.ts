@@ -1,20 +1,13 @@
-import { Component, EventEmitter, Input } from '@angular/core';
-import { OnInit } from '@angular/core';
-import { MovieDetailsPage } from "../movie-details/movie-details";
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'page-trailer',
   templateUrl: 'trailer.html'
 })
 
-export class TrailerPage implements OnInit {
-	ngOnInit(): void {
-  	}
-
+export class TrailerPage {
   	@Input() youtube_url;
   	@Input() poster_path;
 
-	constructor() {
-	}
-
+	constructor() {}
 }

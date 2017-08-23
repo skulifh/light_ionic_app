@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser'
+import { SafeResourceUrl } from '@angular/platform-browser'
 
 import { NavController, NavParams } from 'ionic-angular';
 import { MovieService } from '../../services/movie.service';
@@ -24,7 +24,7 @@ export class MovieDetailsPage {
 		this.movieService.getVideos(this.selectedMovie.id).then(videos => this.url = this.helperService.buildYoutubeUrl(videos));
 	}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private helperService: HelperService, private movieService: MovieService, private sanitizer: DomSanitizer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private helperService: HelperService, private movieService: MovieService) {
     // If we navigated to this page, we will have a movie available as a nav param
     this.selectedMovie = navParams.get('movie');
   }

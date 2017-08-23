@@ -1,10 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
-import { Video } from '../models/video';
-import { Movie } from '../models/movie';
 import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser'
-import * as myGlobals from '../app/globals'
 
 @Injectable()
 export class HelperService {

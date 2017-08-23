@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser'
+import { SafeResourceUrl } from '@angular/platform-browser'
 
 import { NavController, NavParams } from 'ionic-angular';
 import { TvshowService } from '../../services/tvshow.service';
@@ -24,7 +24,7 @@ export class TvshowDetailsPage {
 		this.tvshowService.getVideos(this.selectedTvshow.id).then(videos => this.url = this.helperService.buildYoutubeUrl(videos));
 	}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private helperService: HelperService, private tvshowService: TvshowService, private sanitizer: DomSanitizer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private helperService: HelperService, private tvshowService: TvshowService) {
     // If we navigated to this page, we will have a tvshow available as a nav param
     this.selectedTvshow = navParams.get('tvshow');
   }

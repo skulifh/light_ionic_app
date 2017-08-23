@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Http } from '@angular/http';
 import { Tvshow } from '../models/tvshow';
 import { Video } from '../models/video';
 import * as myGlobals from '../app/globals'
