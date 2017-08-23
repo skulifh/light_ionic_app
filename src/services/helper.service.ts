@@ -9,7 +9,7 @@ export class HelperService {
 	    if (videos) {
 			for (let video of videos) {
 				if (video.site == "YouTube") {
-					return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + video.key + "?rel=0&amp;controls=0&amp;showinfo=0")
+					return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${video.key}?rel=0&amp;controls=0&amp;showinfo=0`)
 				}
 			}
 	    }
