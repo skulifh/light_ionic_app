@@ -11,6 +11,7 @@ import { HelperService } from '../../services/helper.service';
   providers: [TvshowService, HelperService]
 })
 
+// This component displays the further details of the selected tv show including the overview text and poster/trailer
 export class TvshowDetailsPage {
 	selectedTvshow: any;
 	video: any;
@@ -20,7 +21,9 @@ export class TvshowDetailsPage {
 		this.getTvshowVideos();
 	}
 
+	// This function fetches the trailer for the tv show
 	getTvshowVideos(): void {
+		// This command fetches the URL of the trailer for the tv show, and id does so by using a function in the helperService
 		this.tvshowService.getVideos(this.selectedTvshow.id).then(videos => this.url = this.helperService.buildYoutubeUrl(videos));
 	}
 

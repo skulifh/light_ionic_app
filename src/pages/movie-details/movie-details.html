@@ -9,8 +9,9 @@
 
 <ion-content>
   <ion-card>
-    
     <ion-card-content>
+    
+      <!-- Here we use the Trailer component to display either the poster for the movie or the movie's trailer if available -->
       <page-trailer [youtube_url]="url" [poster_path] = "selectedMovie.poster_path"></page-trailer>
       
       <ion-card-title>
@@ -20,6 +21,5 @@
         {{selectedMovie.overview}}
       </p>
     </ion-card-content>
-
   </ion-card>
 </ion-content>

@@ -1,3 +1,4 @@
+// Video class, used for the trailers of both Movies and Tvshows
 export class Video {
   id: number;
   iso_639_1: string;

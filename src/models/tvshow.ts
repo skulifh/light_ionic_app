@@ -1,3 +1,4 @@
+// Tvshow model, here all the Tv show attributes are declared
 export class Tvshow {
   id: number;
   name: string;

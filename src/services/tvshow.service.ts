@@ -9,9 +9,9 @@ import 'rxjs/add/operator/toPromise';
 export class TvshowService {
 	constructor(private http: Http) {}
 
+	// Fetches the top 10 tv shows from TheMovieAPI
 	getTvshows(): Promise<Tvshow[]> {
 		const url = `${myGlobals.api_path}/tv/top_rated`;
-
 	    return this.http.get(url, {
 	        params: { api_key: myGlobals.api_key }
 	    })
@@ -27,9 +27,9 @@ export class TvshowService {
         )
 	}
 
+	// Searches TheMovieAPI for a specific movie using a string
   	searchTvshows(val): Promise<Tvshow[]> {
 		const url = `${myGlobals.api_path}/search/tv`;
-
 	    return this.http.get(url, {
 	        params: { api_key: myGlobals.api_key, language: "en-US", page: 1, include_adult: false, query: val }
 	      })
@@ -45,9 +45,9 @@ export class TvshowService {
         )
 	}
 
+	// Fetches the list of videos (trailers) for a tvshow.
   	getVideos(val): Promise<Video[]> {
 		const url = `${myGlobals.api_path}/tv/${val}/videos`;
-
 	    return this.http.get(url, {
         	params: { api_key: myGlobals.api_key, language: "en-US" }
 	    })

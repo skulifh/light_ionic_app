@@ -5,6 +5,8 @@ import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser'
 export class HelperService {
 	constructor(private sanitizer: DomSanitizer) {}
 
+	// A function that gets an array of videos, fethes the first YouTube video it finds and returns the url of that video. If no YouTube
+	// video is found, or the video array is empty it returns null. This function is used by both the movie-details and tvshow-details module.
   	buildYoutubeUrl(videos): SafeResourceUrl {
 	    if (videos) {
 			for (let video of videos) {
