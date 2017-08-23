@@ -15,16 +15,18 @@ import { TvshowDetailsPage } from '../tvshow-details/tvshow-details';
 export class TvshowsPage implements OnInit {
 	ngOnInit(): void {
   		this.getTvshows();
-
-  		this.default_tvshows = this.tvshows;
   	}
+
+  	// This tvshows collection is displayed in the list of tv shows
 	tvshows: Tvshow[];
 
-	default_tvshows: Tvshow[];
+	// This tvshows collection is used to store top 10 tv shows throughout the lifecycle of the app. This makes it unneccesary to constantly
+	// get the top 10 tv shows from TheMovieDB again and again when the search is cleared.
+	top10_tvshows: Tvshow[];
 
 	// Function that fetches the top 10 rated tvshows from TheMovieDB through Tvshow service
 	getTvshows(): void {
-		this.tvshowService.getTvshows().then(tvshows => this.tvshows = tvshows);
+		this.tvshowService.getTvshows().then(tvshows => this.tvshows = this.top10_tvshows = tvshows);
 	}
 
 	// Function used to call the Tvshow service that searches TheMovieDB for matching tv shows
@@ -34,8 +36,9 @@ export class TvshowsPage implements OnInit {
 	    if (val && val.trim() != '' && val.length > 3) {
 			this.tvshowService.searchTvshows(val).then(tvshows => this.tvshows = tvshows);
 	    }
+	    // If not, displaying the top 10 tv shows again stored in the top10_tvshows variable
 	    else {
-	    	this.tvshowService.getTvshows().then(tvshows => this.tvshows = tvshows);
+	    	this.tvshows = this.top10_tvshows;
 	    }
 	}
 

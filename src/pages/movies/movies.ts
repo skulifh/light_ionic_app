@@ -15,16 +15,18 @@ import { MovieDetailsPage } from '../movie-details/movie-details';
 export class MoviesPage implements OnInit {
 	ngOnInit(): void {
   		this.getMovies();
-
-  		this.default_movies = this.movies;
   	}
+
+  	// This movies collection is displayed in the list of movies
 	movies: Movie[];
 
-	default_movies: Movie[];
+	// This movies collection is used to store top 10 movies throughout the lifecycle of the app. This makes it unneccesary to constantly
+	// get the top 10 movies from TheMovieDB again and again when the search is cleared.
+	top10_movies: Movie[];
 
 	// Function that fetches the top 10 rated movies from TheMovieDB through Movie service
 	getMovies(): void {
-		this.movieService.getMovies().then(movies => this.movies = movies);
+		this.movieService.getMovies().then(movies => this.movies = this.top10_movies = movies);
 	}
 	
 	// Function used to call the Movie service that searches TheMovieDB for matching movies
@@ -34,8 +36,9 @@ export class MoviesPage implements OnInit {
 	    if (val && val.trim() != '' && val.length > 3) {
 			this.movieService.searchMovies(val).then(movies => this.movies = movies);
 	    }
+	    // If not, displaying the top 10 movies again stored in the top10_movies variable
 	    else {
-	    	this.movieService.getMovies().then(movies => this.movies = movies);
+	    	this.movies = this.top10_movies;
 	    }
 	}
 
