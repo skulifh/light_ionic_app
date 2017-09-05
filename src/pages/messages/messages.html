@@ -7,7 +7,14 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      
+      <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12>
+        <ion-item>
+          <ion-label>Message</ion-label>
+          <ion-input type="text" #msgInput name="" value=""></ion-input>
+          
+        </ion-item>
+        <button ion-button (click)="sendMsg(msgInput.value)">Send</button>
+      </ion-col>
 
       <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let message of messages | slice:0:10">
         {{message.msg}}
