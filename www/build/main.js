@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 107:
+/***/ 117:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,11 +13,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 107;
+webpackEmptyAsyncContext.id = 117;
 
 /***/ }),
 
-/***/ 148:
+/***/ 159:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -30,18 +30,19 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 148;
+webpackEmptyAsyncContext.id = 159;
 
 /***/ }),
 
-/***/ 192:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tvshows_tvshows__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__movies_movies__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tvshows_tvshows__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__movies_movies__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__messages_messages__ = __webpack_require__(212);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -54,15 +55,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var TabsPage = (function () {
     function TabsPage() {
         this.tab1Root = __WEBPACK_IMPORTED_MODULE_2__movies_movies__["a" /* MoviesPage */];
         this.tab2Root = __WEBPACK_IMPORTED_MODULE_1__tvshows_tvshows__["a" /* TvshowsPage */];
+        this.tab3Root = __WEBPACK_IMPORTED_MODULE_3__messages_messages__["a" /* MessagesPage */];
     }
     return TabsPage;
 }());
 TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\tabs\tabs.html"*/'<ion-tabs>\n\n  <ion-tab [root]="tab1Root" tabTitle="Movies" tabIcon="film"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabTitle="TV shows" tabIcon="easel"></ion-tab>\n\n</ion-tabs>\n\n'/*ion-inline-end:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\tabs\tabs.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/skuli/Documents/git/light_ionic_app/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Movies" tabIcon="film"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="TV shows" tabIcon="easel"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Messages" tabIcon="mail"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/skuli/Documents/git/light_ionic_app/src/pages/tabs/tabs.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], TabsPage);
@@ -71,15 +74,15 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 193:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TvshowsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_tvshow_service__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tvshow_details_tvshow_details__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_tvshow_service__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tvshow_details_tvshow_details__ = __webpack_require__(207);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -128,8 +131,8 @@ var TvshowsPage = (function () {
     return TvshowsPage;
 }());
 TvshowsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-tvshows',template:/*ion-inline-start:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\tvshows\tvshows.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Tvshows</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-searchbar (ionInput)="searchTvshows($event)"></ion-searchbar>\n\n  <ion-grid>\n\n    <ion-row>\n\n      \n\n\n\n      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let tvshow of tvshows | slice:0:10">\n\n        <ion-item>\n\n          <ion-thumbnail item-start>\n\n            <img src="https://image.tmdb.org/t/p/w300_and_h300_bestv2/{{tvshow.poster_path}}">\n\n          </ion-thumbnail>\n\n          <h2>{{tvshow.name}}</h2>\n\n          <p>{{tvshow.first_air_date.split("-")[0]}} • {{tvshow.vote_average}} <ion-icon name="star"></ion-icon></p>\n\n          <button ion-button clear item-end (click)="tvshowTapped($event, tvshow)">View</button>\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\tvshows\tvshows.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-tvshows',template:/*ion-inline-start:"/Users/skuli/Documents/git/light_ionic_app/src/pages/tvshows/tvshows.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Tvshows</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-searchbar (ionInput)="searchTvshows($event)"></ion-searchbar>\n  <ion-grid>\n    <ion-row>\n      \n\n      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let tvshow of tvshows | slice:0:10">\n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="https://image.tmdb.org/t/p/w300_and_h300_bestv2/{{tvshow.poster_path}}">\n          </ion-thumbnail>\n          <h2>{{tvshow.name}}</h2>\n          <p>{{tvshow.first_air_date.split("-")[0]}} • {{tvshow.vote_average}} <ion-icon name="star"></ion-icon></p>\n          <button ion-button clear item-end (click)="tvshowTapped($event, tvshow)">View</button>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Users/skuli/Documents/git/light_ionic_app/src/pages/tvshows/tvshows.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__services_tvshow_service__["a" /* TvshowService */]]
     })
     // This component is used to display top 10 tvshows in a list, and make it possible to click individual tv show to see further details of that tv show
@@ -141,15 +144,15 @@ TvshowsPage = __decorate([
 
 /***/ }),
 
-/***/ 194:
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TvshowService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_globals__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_globals__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -216,7 +219,7 @@ var TvshowService = (function () {
     return TvshowService;
 }());
 TvshowService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
 ], TvshowService);
 
@@ -224,7 +227,7 @@ TvshowService = __decorate([
 
 /***/ }),
 
-/***/ 195:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -238,15 +241,15 @@ var api_key = "97c9873a035726c716e8254e0a0e8ed1";
 
 /***/ }),
 
-/***/ 197:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TvshowDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_tvshow_service__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_helper_service__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_tvshow_service__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_helper_service__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -281,8 +284,8 @@ var TvshowDetailsPage = (function () {
     return TvshowDetailsPage;
 }());
 TvshowDetailsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-tvshow-details',template:/*ion-inline-start:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\tvshow-details\tvshow-details.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button menuToggle *ngIf="!selectedTvshow">\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Tvshow Details</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-card-content>\n\n\n\n      <!-- Here we use the Trailer component to display either the poster for the tv show or the tv show\'s trailer if available -->\n\n      <page-trailer [youtube_url]="url" [poster_path] = "selectedTvshow.poster_path"></page-trailer>\n\n      \n\n      <ion-card-title>\n\n        {{selectedTvshow.title}}\n\n      </ion-card-title>\n\n      <p>\n\n        {{selectedTvshow.overview}}\n\n      </p>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\tvshow-details\tvshow-details.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-tvshow-details',template:/*ion-inline-start:"/Users/skuli/Documents/git/light_ionic_app/src/pages/tvshow-details/tvshow-details.html"*/'<ion-header>\n  <ion-navbar>\n    <button menuToggle *ngIf="!selectedTvshow">\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Tvshow Details</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-card>\n    <ion-card-content>\n\n      <!-- Here we use the Trailer component to display either the poster for the tv show or the tv show\'s trailer if available -->\n      <page-trailer [youtube_url]="url" [poster_path] = "selectedTvshow.poster_path"></page-trailer>\n      \n      <ion-card-title>\n        {{selectedTvshow.title}}\n      </ion-card-title>\n      <p>\n        {{selectedTvshow.overview}}\n      </p>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/skuli/Documents/git/light_ionic_app/src/pages/tvshow-details/tvshow-details.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__services_tvshow_service__["a" /* TvshowService */], __WEBPACK_IMPORTED_MODULE_3__services_helper_service__["a" /* HelperService */]]
     })
     // This component displays the further details of the selected tv show including the overview text and poster/trailer
@@ -294,13 +297,13 @@ TvshowDetailsPage = __decorate([
 
 /***/ }),
 
-/***/ 198:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HelperService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(22);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -332,7 +335,7 @@ var HelperService = (function () {
     return HelperService;
 }());
 HelperService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["c" /* DomSanitizer */]])
 ], HelperService);
 
@@ -340,15 +343,15 @@ HelperService = __decorate([
 
 /***/ }),
 
-/***/ 199:
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MoviesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_movie_service__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__movie_details_movie_details__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_movie_service__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__movie_details_movie_details__ = __webpack_require__(211);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -397,8 +400,8 @@ var MoviesPage = (function () {
     return MoviesPage;
 }());
 MoviesPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-movies',template:/*ion-inline-start:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\movies\movies.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Movies</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-searchbar (ionInput)="searchMovies($event)"></ion-searchbar>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let movie of movies | slice:0:10">\n\n        <ion-item>\n\n          <ion-thumbnail item-start>\n\n            <img src="https://image.tmdb.org/t/p/w300_and_h300_bestv2/{{movie.poster_path}}">\n\n          </ion-thumbnail>\n\n          <h2>{{movie.title}}</h2>\n\n          <p>{{movie.release_date.split("-")[0]}} • {{movie.vote_average}} <ion-icon name="star"></ion-icon></p>\n\n          <button ion-button clear item-end (click)="movieTapped($event, movie)">View</button>\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\movies\movies.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-movies',template:/*ion-inline-start:"/Users/skuli/Documents/git/light_ionic_app/src/pages/movies/movies.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Movies</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-searchbar (ionInput)="searchMovies($event)"></ion-searchbar>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let movie of movies | slice:0:10">\n        <ion-item>\n          <ion-thumbnail item-start>\n            <img src="https://image.tmdb.org/t/p/w300_and_h300_bestv2/{{movie.poster_path}}">\n          </ion-thumbnail>\n          <h2>{{movie.title}}</h2>\n          <p>{{movie.release_date.split("-")[0]}} • {{movie.vote_average}} <ion-icon name="star"></ion-icon></p>\n          <button ion-button clear item-end (click)="movieTapped($event, movie)">View</button>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/skuli/Documents/git/light_ionic_app/src/pages/movies/movies.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__services_movie_service__["a" /* MovieService */]]
     })
     // This component is used to display top 10 movies in a list, and make it possible to click individual movie to see further details of that movie
@@ -410,16 +413,16 @@ MoviesPage = __decorate([
 
 /***/ }),
 
-/***/ 200:
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MovieService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_globals__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_globals__ = __webpack_require__(206);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -485,7 +488,7 @@ var MovieService = (function () {
     return MovieService;
 }());
 MovieService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
 ], MovieService);
 
@@ -493,15 +496,15 @@ MovieService = __decorate([
 
 /***/ }),
 
-/***/ 201:
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MovieDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_movie_service__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_helper_service__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_movie_service__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_helper_service__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -537,8 +540,8 @@ var MovieDetailsPage = (function () {
     return MovieDetailsPage;
 }());
 MovieDetailsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-movie-details',template:/*ion-inline-start:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\movie-details\movie-details.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button menuToggle *ngIf="!selectedMovie">\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Movie Details</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-card-content>\n\n    \n\n      <!-- Here we use the Trailer component to display either the poster for the movie or the movie\'s trailer if available -->\n\n      <page-trailer [youtube_url]="url" [poster_path] = "selectedMovie.poster_path"></page-trailer>\n\n      \n\n      <ion-card-title>\n\n        {{selectedMovie.title}}\n\n      </ion-card-title>\n\n      <p>\n\n        {{selectedMovie.overview}}\n\n      </p>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\movie-details\movie-details.html"*/,
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-movie-details',template:/*ion-inline-start:"/Users/skuli/Documents/git/light_ionic_app/src/pages/movie-details/movie-details.html"*/'<ion-header>\n  <ion-navbar>\n    <button menuToggle *ngIf="!selectedMovie">\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Movie Details</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-card>\n    <ion-card-content>\n    \n      <!-- Here we use the Trailer component to display either the poster for the movie or the movie\'s trailer if available -->\n      <page-trailer [youtube_url]="url" [poster_path] = "selectedMovie.poster_path"></page-trailer>\n      \n      <ion-card-title>\n        {{selectedMovie.title}}\n      </ion-card-title>\n      <p>\n        {{selectedMovie.overview}}\n      </p>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/skuli/Documents/git/light_ionic_app/src/pages/movie-details/movie-details.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__services_movie_service__["a" /* MovieService */], __WEBPACK_IMPORTED_MODULE_3__services_helper_service__["a" /* HelperService */]]
     })
     // This component displays the further details of the selected movie including the overview text and poster/trailer
@@ -550,13 +553,79 @@ MovieDetailsPage = __decorate([
 
 /***/ }),
 
-/***/ 202:
+/***/ 212:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessagesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_message_service__ = __webpack_require__(296);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+//import { MessageDetailsPage } from '../message-details/message-details';
+var MessagesPage = (function () {
+    // Function that runs when an individual message is clicked on the Messages page
+    // messageTapped(event, message) {
+    // 	this.navCtrl.push(MessageDetailsPage, {
+    // 		message: message
+    // 	});
+    // }
+    // Injecting the NavController and the MovieService into this Messages component
+    function MessagesPage(navCtrl, messageService) {
+        this.navCtrl = navCtrl;
+        this.messageService = messageService;
+    }
+    MessagesPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this.getMessages();
+        this.messageService
+            .getMessage()
+            .subscribe(function (msg) {
+            _this.msg = "1st " + msg;
+        });
+    };
+    MessagesPage.prototype.sendMsg = function (msg) {
+        this.messageService.sendMessage(msg);
+    };
+    // Function that fetches the top 10 rated messages from TheMovieDB through Message service
+    MessagesPage.prototype.getMessages = function () {
+        var _this = this;
+        this.messageService.getMessages().then(function (messages) { return _this.messages = _this.top10_messages = messages; });
+    };
+    return MessagesPage;
+}());
+MessagesPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-messages',template:/*ion-inline-start:"/Users/skuli/Documents/git/light_ionic_app/src/pages/messages/messages.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Messages {{msg}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      \n\n      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let message of messages | slice:0:10">\n        {{message.msg}}\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Users/skuli/Documents/git/light_ionic_app/src/pages/messages/messages.html"*/,
+        providers: [__WEBPACK_IMPORTED_MODULE_2__services_message_service__["a" /* MessageService */]]
+    })
+    // This component is used to display top 10 messages in a list, and make it possible to click individual tv show to see further details of that tv show
+    ,
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_message_service__["a" /* MessageService */]])
+], MessagesPage);
+
+//# sourceMappingURL=messages.js.map
+
+/***/ }),
+
+/***/ 228:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(246);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -564,24 +633,27 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 221:
+/***/ 246:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tvshows_tvshows__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_movies_movies__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_movie_details_movie_details__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tvshow_details_tvshow_details__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_trailer_trailer__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(286);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tvshows_tvshows__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_movies_movies__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_messages_messages__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_movie_details_movie_details__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tvshow_details_tvshow_details__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_trailer_trailer__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ng_socket_io__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_ng_socket_io___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_ng_socket_io__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -601,24 +673,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+var config = { url: 'http://localhost:5000', options: {} };
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_5__pages_tvshows_tvshows__["a" /* TvshowsPage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_movies_movies__["a" /* MoviesPage */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_movie_details_movie_details__["a" /* MovieDetailsPage */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_tvshow_details_tvshow_details__["a" /* TvshowDetailsPage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_trailer_trailer__["a" /* TrailerPage */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */]
+            __WEBPACK_IMPORTED_MODULE_7__pages_messages_messages__["a" /* MessagesPage */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_movie_details_movie_details__["a" /* MovieDetailsPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_tvshow_details_tvshow_details__["a" /* TvshowDetailsPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_trailer_trailer__["a" /* TrailerPage */],
+            __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_14_ng_socket_io__["SocketIoModule"].forRoot(config),
             __WEBPACK_IMPORTED_MODULE_4__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */])
         ],
@@ -627,15 +704,16 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_5__pages_tvshows_tvshows__["a" /* TvshowsPage */],
             __WEBPACK_IMPORTED_MODULE_6__pages_movies_movies__["a" /* MoviesPage */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_movie_details_movie_details__["a" /* MovieDetailsPage */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_tvshow_details_tvshow_details__["a" /* TvshowDetailsPage */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_trailer_trailer__["a" /* TrailerPage */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */]
+            __WEBPACK_IMPORTED_MODULE_7__pages_messages_messages__["a" /* MessagesPage */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_movie_details_movie_details__["a" /* MovieDetailsPage */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_tvshow_details_tvshow_details__["a" /* TvshowDetailsPage */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_trailer_trailer__["a" /* TrailerPage */],
+            __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__["a" /* TabsPage */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_11__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_12__ionic_native_splash_screen__["a" /* SplashScreen */],
-            { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
+            __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_13__ionic_native_splash_screen__["a" /* SplashScreen */],
+            { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] }
         ]
     })
 ], AppModule);
@@ -644,16 +722,16 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 262:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(188);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(203);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -680,7 +758,7 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\sfh-dk\Documents\light_ionic_app\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\sfh-dk\Documents\light_ionic_app\src\app\app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/skuli/Documents/git/light_ionic_app/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/skuli/Documents/git/light_ionic_app/src/app/app.html"*/
     })
     //Main application class, rootpage is the tabs component which contains the .
     ,
@@ -691,7 +769,79 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 272:
+/***/ 296:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessageService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng_socket_io__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng_socket_io___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ng_socket_io__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_toPromise__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_toPromise__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var MessageService = (function () {
+    function MessageService(http, socket) {
+        this.http = http;
+        this.socket = socket;
+    }
+    // Fetches the top 10 tv shows from TheMovieAPI
+    MessageService.prototype.getMessages = function () {
+        var url = "http://localhost:5000/api/message";
+        return this.http.get(url, {})
+            .toPromise()
+            .then(function (response) {
+            return response.json();
+        }, 
+        //Error fallback function
+        function (error) {
+            return null;
+        });
+    };
+    MessageService.prototype.getMessage = function () {
+        return this.socket
+            .fromEvent("msg")
+            .map(function (data) { return data.msg; });
+    };
+    MessageService.prototype.sendMessage = function (msg) {
+        this.socket
+            .emit("msg", msg);
+    };
+    return MessageService;
+}());
+MessageService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ng_socket_io__["Socket"]])
+], MessageService);
+
+//# sourceMappingURL=message.service.js.map
+
+/***/ }),
+
+/***/ 319:
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 323:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -714,16 +864,16 @@ var TrailerPage = (function () {
     return TrailerPage;
 }());
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], TrailerPage.prototype, "youtube_url", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], TrailerPage.prototype, "poster_path", void 0);
 TrailerPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-trailer',template:/*ion-inline-start:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\trailer\trailer.html"*/'<!-- Here we check if a trailer is available for the movie/tvshow, if not we display the poster of the movie/tvshow instead -->\n\n<iframe *ngIf="youtube_url" width="560" height="315" [attr.src]="youtube_url" frameborder="0" allowfullscreen></iframe>\n\n<img *ngIf="!youtube_url" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{poster_path}}" alt="...">'/*ion-inline-end:"C:\Users\sfh-dk\Documents\light_ionic_app\src\pages\trailer\trailer.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-trailer',template:/*ion-inline-start:"/Users/skuli/Documents/git/light_ionic_app/src/pages/trailer/trailer.html"*/'<!-- Here we check if a trailer is available for the movie/tvshow, if not we display the poster of the movie/tvshow instead -->\n<iframe *ngIf="youtube_url" width="560" height="315" [attr.src]="youtube_url" frameborder="0" allowfullscreen></iframe>\n<img *ngIf="!youtube_url" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{poster_path}}" alt="...">'/*ion-inline-end:"/Users/skuli/Documents/git/light_ionic_app/src/pages/trailer/trailer.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], TrailerPage);
@@ -732,5 +882,5 @@ TrailerPage = __decorate([
 
 /***/ })
 
-},[202]);
+},[228]);
 //# sourceMappingURL=main.js.map
