@@ -13,32 +13,34 @@ export class MessageService {
 	constructor(private http: Http, private socket: Socket) {}
 
 	// Fetches the top 10 tv shows from TheMovieAPI
-	getMessages(): Promise<Message[]> {
-		const url = `http://localhost:5000/api/message`;
-	    return this.http.get(url, {
-	        // params: { api_key: myGlobals.api_key }
-	    })
-	    .toPromise()
-	    .then(
-	    	function(response) {
-  				return response.json() as Message[];
-  			},
-	        //Error fallback function
-	        function(error) {
-	          return null;
-	        }
-        )
-	}
+	// getMessages(): Promise<Message[]> {
+	// 	const url = `http://localhost:5000/api/message`;
+	//     return this.http.get(url, {
+	//         // params: { api_key: myGlobals.api_key }
+	//     })
+	//     .toPromise()
+	//     .then(
+	//     	function(response) {
+ //  				return response.json() as Message[];
+ //  			},
+	//         //Error fallback function
+	//         function(error) {
+	//           return null;
+	//         }
+ //        )
+	// }
 
 	getMessage() {
         return this.socket
             .fromEvent<any>("msg")
-            .map(data => data.msg);
+            .map(data => data);
     }
 
     sendMessage(msg: string) {
+    	var message = new Message();
+    	message.msg = msg
         this.socket
-            .emit("msg", msg);
+            .emit("newmsg", msg);
     }
 
 

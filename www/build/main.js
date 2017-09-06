@@ -575,6 +575,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 //import { MessageDetailsPage } from '../message-details/message-details';
 var MessagesPage = (function () {
+    // Function that fetches the top 10 rated messages from TheMovieDB through Message service
+    // getMessages(): void {
+    // 	this.messageService.getMessages().then(messages => this.messages = this.top10_messages = messages);
+    // }
     // Function that runs when an individual message is clicked on the Messages page
     // messageTapped(event, message) {
     // 	this.navCtrl.push(MessageDetailsPage, {
@@ -588,33 +592,36 @@ var MessagesPage = (function () {
     }
     MessagesPage.prototype.ngOnInit = function () {
         var _this = this;
-        this.getMessages();
         this.messageService
             .getMessage()
             .subscribe(function (msg) {
-            _this.msg = "1st " + msg;
+            if (_this.messages) {
+                for (var _i = 0, msg_1 = msg; _i < msg_1.length; _i++) {
+                    var mess = msg_1[_i];
+                    _this.messages.push(mess);
+                }
+            }
+            else {
+                _this.messages = msg;
+            }
         });
     };
     MessagesPage.prototype.sendMsg = function (msg) {
         this.messageService.sendMessage(msg);
     };
-    // Function that fetches the top 10 rated messages from TheMovieDB through Message service
-    MessagesPage.prototype.getMessages = function () {
-        var _this = this;
-        this.messageService.getMessages().then(function (messages) { return _this.messages = _this.top10_messages = messages; });
-    };
     return MessagesPage;
 }());
 MessagesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-messages',template:/*ion-inline-start:"/Users/skuli/Documents/git/light_ionic_app/src/pages/messages/messages.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Messages {{msg}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12>\n        <ion-item>\n          <ion-label>Message</ion-label>\n          <ion-input type="text" #msgInput name="" value=""></ion-input>\n          \n        </ion-item>\n        <button ion-button (click)="sendMsg(msgInput.value)">Send</button>\n      </ion-col>\n\n      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let message of messages | slice:0:10">\n        {{message.msg}}\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Users/skuli/Documents/git/light_ionic_app/src/pages/messages/messages.html"*/,
+        selector: 'page-messages',template:/*ion-inline-start:"/Users/skuli/Documents/git/light_ionic_app/src/pages/messages/messages.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Messages {{msg}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12>\n        <ion-item>\n          <ion-label>Message</ion-label>\n          <ion-input type="text" #msgInput name="" value=""></ion-input>\n          \n        </ion-item>\n        <button ion-button (click)="sendMsg(msgInput.value)">Send</button>\n      </ion-col>\n\n      <ion-col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 *ngFor="let message of messages">\n        {{message.msg}}\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n'/*ion-inline-end:"/Users/skuli/Documents/git/light_ionic_app/src/pages/messages/messages.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_2__services_message_service__["a" /* MessageService */]]
     })
     // This component is used to display top 10 messages in a list, and make it possible to click individual tv show to see further details of that tv show
     ,
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__services_message_service__["a" /* MessageService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_message_service__["a" /* MessageService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_message_service__["a" /* MessageService */]) === "function" && _b || Object])
 ], MessagesPage);
 
+var _a, _b;
 //# sourceMappingURL=messages.js.map
 
 /***/ }),
@@ -776,12 +783,13 @@ MyApp = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessageService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(297);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng_socket_io__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng_socket_io___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ng_socket_io__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_toPromise__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_message__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(297);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng_socket_io__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng_socket_io___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng_socket_io__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_toPromise__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -796,40 +804,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MessageService = (function () {
     function MessageService(http, socket) {
         this.http = http;
         this.socket = socket;
     }
     // Fetches the top 10 tv shows from TheMovieAPI
-    MessageService.prototype.getMessages = function () {
-        var url = "http://localhost:5000/api/message";
-        return this.http.get(url, {})
-            .toPromise()
-            .then(function (response) {
-            return response.json();
-        }, 
-        //Error fallback function
-        function (error) {
-            return null;
-        });
-    };
+    // getMessages(): Promise<Message[]> {
+    // 	const url = `http://localhost:5000/api/message`;
+    //     return this.http.get(url, {
+    //         // params: { api_key: myGlobals.api_key }
+    //     })
+    //     .toPromise()
+    //     .then(
+    //     	function(response) {
+    //  				return response.json() as Message[];
+    //  			},
+    //         //Error fallback function
+    //         function(error) {
+    //           return null;
+    //         }
+    //        )
+    // }
     MessageService.prototype.getMessage = function () {
         return this.socket
             .fromEvent("msg")
-            .map(function (data) { return data.msg; });
+            .map(function (data) { return data; });
     };
     MessageService.prototype.sendMessage = function (msg) {
+        var message = new __WEBPACK_IMPORTED_MODULE_2__models_message__["a" /* Message */]();
+        message.msg = msg;
         this.socket
-            .emit("msg", msg);
+            .emit("newmsg", msg);
     };
     return MessageService;
 }());
 MessageService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */], __WEBPACK_IMPORTED_MODULE_3_ng_socket_io__["Socket"]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_ng_socket_io__["Socket"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_ng_socket_io__["Socket"]) === "function" && _b || Object])
 ], MessageService);
 
+var _a, _b;
 //# sourceMappingURL=message.service.js.map
 
 /***/ }),
@@ -879,6 +895,22 @@ TrailerPage = __decorate([
 ], TrailerPage);
 
 //# sourceMappingURL=trailer.js.map
+
+/***/ }),
+
+/***/ 324:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Message; });
+// Movie model, here all the movies attributes are declared
+var Message = (function () {
+    function Message() {
+    }
+    return Message;
+}());
+
+//# sourceMappingURL=message.js.map
 
 /***/ })
 
